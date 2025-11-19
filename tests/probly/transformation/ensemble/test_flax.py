@@ -5,14 +5,14 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
+from probly.transformation.ensemble.flax import generate_flax_ensemble
+from pytraverse import singledispatch_traverser
+from tests.probly.flax_utils import count_layers
+
 flax = pytest.importorskip("flax")
 from flax import nnx  # noqa: E402
 import jax  # noqa: E402
 from jax import numpy as jnp  # noqa: E402
-
-from probly.transformation.ensemble.flax import generate_flax_ensemble  # noqa: E402
-from pytraverse import singledispatch_traverser  # noqa: E402
-from tests.probly.flax_utils import count_layers  # noqa: E402
 
 reset_traverser = singledispatch_traverser[object](name="reset_traverser")
 
