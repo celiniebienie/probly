@@ -1,3 +1,5 @@
+"""probly.transformation.ensemble.flax.common.test_common."""
+
 import pytest
 from probly.transformation.ensemble.common import ensemble, register
 
@@ -16,10 +18,10 @@ def test_register_then_ensemble_calls_generator_and_returns_value():
     register(DummyPredictor, fake_generator)
 
     base = DummyPredictor()
-    result = ensemble(base, 5)  # nur base und num_members
+    result = ensemble(base, 5)  # only base and num_members
 
     assert result == "OK"
-    assert calls == [(base, 5, True)]  # reset_params defaultet auf True
+    assert calls == [(base, 5, True)]  # reset_params defaultet to True
 
 
 

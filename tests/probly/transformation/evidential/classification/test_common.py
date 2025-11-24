@@ -1,3 +1,5 @@
+"""probly.transformation.evidential.classification.common."""
+
 import importlib
 import types
 import importlib as _il
@@ -34,18 +36,19 @@ def test_evidential_classification_handles_valid_torch_module() -> None:
 
 
 def test_evidential_classification_rejects_invalid_input() -> None:
-    """
-    Check that evidential_classification fails on invalid input types.
-    """
+
+    """Check that evidential_classification fails on invalid input types."""
+
     invalid_input = "not_a_module"
 
     with pytest.raises(Exception):
         common.evidential_classification(invalid_input)  # type: ignore[arg-type]
 
 def test_register_rejects_invalid_arguments() -> None:
-    """
-    Check that register fails when called with invalid arguments.
-    """
+
+
+    """Check that register fails when called with invalid arguments."""
+
     # We assume that passing obviously wrong types should raise an error.
     # Exact signature is defined in the implementation, but incorrect types
     # must not be silently accepted.
