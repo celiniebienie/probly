@@ -29,7 +29,7 @@ def _(obj: nnx.Linear) -> nnx.Module:
 
 @reset_traverser.register
 def _(obj: nnx.Conv) -> nnx.Module:
-    """Creates a new object with new random arguments for Linear Layers.
+    """Creates a new object with new random arguments for Convoluted Layers.
 
     Args:
          obj: nnx.Conv:
