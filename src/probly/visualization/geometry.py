@@ -12,11 +12,18 @@ class CredalVisualizer:
     def __init__(self) -> None:  # noqa: D107
         pass
 
-    def probs_to_coords(self, probs: np.ndarray) -> tuple:
+    def probs_to_coords_3D(self, probs: np.ndarray) -> tuple:
         """Convert ternary probabilities to 2D coordinates."""
         p1, p2, p3 = probs  # noqa: RUF059
         x = p2 + 0.5 * p3
         y = (np.sqrt(3) / 2) * p3
+        return x, y
+
+    def probs_to_coords_2D(self, probs: np.ndarray) -> tuple:
+        """Convert 2D probabilities to 2D coordinates."""
+        p1, p2 = probs
+        x = p2
+        y = 0
         return x, y
 
     def ternary_plot(
@@ -30,7 +37,7 @@ class CredalVisualizer:
         if probs.shape[1] != 3:
             raise ValueError(msg)
 
-        coords = np.array([self.probs_to_coords(p) for p in probs])
+        coords = np.array([self.probs_to_coords_3D(p) for p in probs])
 
         if ax is None:
             fig, ax = plt.subplots(figsize=(6, 6))  # noqa: RUF059
@@ -49,6 +56,47 @@ class CredalVisualizer:
 
         return ax
 
+
+    def interval_plot(
+        self,
+        probs:np.ndarray,
+        ax: mpl.axes.Axes = None,
+        **scatter_kwargs: mpl.Kwargs
+    ) -> mpl.axes.Axes:
+
+        coords = np.array([self.probs_to_coords_2D(p) for p in probs])
+
+        if ax is None:
+            fig, ax = plt.subplots(figsize=(6, 1))
+
+        y_marg = np.array([0.1, -0.1])
+
+        plt.plot([0,1], [0,0], color = 'black', linewidth = 4, zorder = 0)
+
+        coord_max = np.max(coords[:,0])
+        coord_min = np.min(coords[:,0])
+        ax.fill_betweenx(y_marg, coord_max, coord_min, color = 'purple', alpha = 0.5, zorder = 2)
+
+        ax.scatter(coords[:, 0], coords[:, 1], color = 'green', zorder = 1)
+
+
+        ax.axis('off')
+        ax.set_ylim((-0.2, 0.2))
+
+        y_anchor = -0.07
+        x_beg = 0
+        x_mid = 0.5
+        x_end = 1
+
+        ax.text(x_beg, y_anchor, '0 ', ha='center', va='top')
+        ax.text(x_mid, y_anchor, '0.5', ha='center', va='top')
+        ax.text(x_end, y_anchor, '1 ', ha='center', va='top')
+        ax.text(x_beg, y_anchor -0.07, 'Class A', ha='center', va='top')
+        ax.text(x_end, y_anchor -0.07, 'Class B', ha='center', va='top')
+
+        return ax
+
+
     def plot_convex_hull(
         self,
         probs: np.ndarray,
@@ -64,7 +112,7 @@ class CredalVisualizer:
         - 2 points (line segment)
         - ≥3 points (polygon).
         """  # noqa: D205
-        coords = np.array([self.probs_to_coords(p) for p in probs])
+        coords = np.array([self.probs_to_coords_3D(p) for p in probs])
 
         if ax is None:
             fig, ax = plt.subplots(figsize=(6, 6))  # noqa: RUF059
@@ -113,6 +161,13 @@ class CredalVisualizer:
         return ax
 
 
+points_2D = np.array(
+    [
+        [0.2, 0.8],
+        [0.5, 0.5],
+        [0.1, 0.9]
+    ]
+)
 
 
 points = np.array(
@@ -127,8 +182,12 @@ points = np.array(
 )
 
 viz = CredalVisualizer()
+fig, axes = plt.subplots(2, 1, figsize=(6, 12))  # 1 row, 2 columns
 
-ax = viz.ternary_plot(points, color="blue", s=50)
-viz.plot_convex_hull(points, ax=ax)
+viz.ternary_plot(points, ax=axes[0], color="blue", s=50)
+viz.plot_convex_hull(points, ax=axes[0])
+
+
+viz.interval_plot(points_2D, ax=axes[1])
 
 plt.show()
