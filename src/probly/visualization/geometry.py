@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -29,12 +28,14 @@ class CredalVisualizer:
     def interval_plot(
         self,
         probs: np.ndarray,
-        ax: mpl.axes.Axes = None,
-    ) -> mpl.axes.Axes:
+        labels: list[str] | None = None,
+        ax: plt.Axes = None,
+    ) -> plt.Axes:
         """Plot the interval plot.
 
         Args:
         probs: probability vector for 2 classes.
+        labels: labels for the interval plot.
         ax: matplotlib axes.Axes.
 
         returns: plot.
@@ -62,11 +63,20 @@ class CredalVisualizer:
         x_mid = 0.5
         x_end = 1
 
+        n_classes = probs.shape[-1]
+
+        if labels is None:
+            labels = [f"C{i + 1}" for i in range(n_classes)]
+
+        if len(labels) != n_classes:
+            msg = f"Number of labels ({len(labels)}) must match number of classes ({n_classes})."
+            raise ValueError(msg)
+
         ax.text(x_beg, y_anchor, "0 ", ha="center", va="top")
         ax.text(x_mid, y_anchor, "0.5", ha="center", va="top")
         ax.text(x_end, y_anchor, "1 ", ha="center", va="top")
-        ax.text(x_beg, y_anchor - 0.07, "Class A", ha="center", va="top")
-        ax.text(x_end, y_anchor - 0.07, "Class B", ha="center", va="top")
+        ax.text(x_beg, y_anchor - 0.07, f"{labels[0]}", ha="center", va="top")
+        ax.text(x_end, y_anchor - 0.07, f"{labels[1]}", ha="center", va="top")
 
         return ax
 
