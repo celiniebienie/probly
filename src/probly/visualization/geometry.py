@@ -46,28 +46,56 @@ class CredalVisualizer:
 
         y_marg = np.array([0.1, -0.1])
 
-        plt.plot([0, 1], [0, 0], color="black", linewidth=4, zorder=0)
+        plt.plot([0, 1], [0, 0], color="black", linewidth=3, zorder=0)
 
         coord_max = np.max(coords[:, 0])
         coord_min = np.min(coords[:, 0])
-        ax.fill_betweenx(y_marg, coord_max, coord_min, color="purple", alpha=0.5, zorder=2)
+        ax.fill_betweenx(y_marg, coord_max, coord_min, color="purple", alpha=0.3, zorder=2)
 
         ax.scatter(coords[:, 0], coords[:, 1], color="green", zorder=1)
 
         ax.axis("off")
-        ax.set_ylim((-0.2, 0.2))
+        ax.set_ylim((-0.05, 0.05))
 
         y_anchor = -0.07
         x_beg = 0
-        x_mid = 0.5
         x_end = 1
-
-        ax.text(x_beg, y_anchor, "0 ", ha="center", va="top")
-        ax.text(x_mid, y_anchor, "0.5", ha="center", va="top")
-        ax.text(x_end, y_anchor, "1 ", ha="center", va="top")
         ax.text(x_beg, y_anchor - 0.07, "Class A", ha="center", va="top")
         ax.text(x_end, y_anchor - 0.07, "Class B", ha="center", va="top")
 
+        tick_values = np.linspace(0.0, 1.0, 11)
+        tick_length = 0.02
+        label_offset = -0.05
+        e1 = np.array([0.0, 0.0])
+        e2 = np.array([1.0, 0.0])
+        edges = [(e1,e2,"A")]
+        def lerp(P, Q, t):
+            """Linear Interpolation for line values."""
+            return (1 - t) * P + t * Q
+        for P, Q, axis_name in edges:
+            edge_vec = Q - P
+            normal = np.array([-edge_vec[1], edge_vec[0]])
+            normal = normal / np.linalg.norm(normal)
+
+            for t in tick_values:
+                pos = lerp(P, Q, t)
+
+                tick_start = pos - normal * (tick_length / 2)
+                tick_end = pos + normal * (tick_length / 2)
+                ax.plot(
+                    [tick_start[0], tick_end[0]],
+                    [tick_start[1], tick_end[1]],
+                    color="black",
+                )
+                label_pos = pos + normal * label_offset
+                ax.text(
+                    label_pos[0],
+                    label_pos[1],
+                    f"{t:.1f}",
+                    ha="center",
+                    va="center",
+                    fontsize=8,
+                )
         return ax
 
 
