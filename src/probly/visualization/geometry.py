@@ -29,6 +29,8 @@ class CredalVisualizer:
         self,
         probs: np.ndarray,
         labels: list[str] | None = None,
+        mle_flag: bool = True,
+        credal_flag: bool = True,
         ax: plt.Axes = None,
     ) -> plt.Axes:
         """Plot the interval plot.
@@ -36,6 +38,8 @@ class CredalVisualizer:
         Args:
         probs: probability vector for 2 classes.
         labels: labels for the interval plot.
+        mle_flag: whether to show the median of all probabilities.
+        credal_flag: whether to show the min/max interval.
         ax: matplotlib axes.Axes.
 
         returns: plot.
@@ -49,10 +53,14 @@ class CredalVisualizer:
 
         plt.plot([0, 1], [0, 0], color="black", linewidth=4, zorder=0)
 
-        coord_max = np.max(coords[:, 0])
-        coord_min = np.min(coords[:, 0])
-        ax.fill_betweenx(y_marg, coord_max, coord_min, color="purple", alpha=0.5, zorder=2)
+        if credal_flag:
+            coord_max = np.max(coords[:, 0])
+            coord_min = np.min(coords[:, 0])
+            ax.fill_betweenx(y_marg, coord_max, coord_min, color="purple", alpha=0.5, zorder=2)
 
+        if mle_flag:
+            mle = np.mean(coords[:, 0])
+            ax.scatter(mle, 0, color="red", s=50, zorder=5)
         ax.scatter(coords[:, 0], coords[:, 1], color="green", zorder=1)
 
         ax.axis("off")
