@@ -101,6 +101,7 @@ class CredalVisualizer:
         rmax: float = 1.0,
         ax: Axes | None = None,
     ) -> Axes:
+        """Create a spider plot for credal predictions."""
         num_classes = len(labels)
 
         if mle is None and (lower is None or upper is None):
@@ -111,9 +112,7 @@ class CredalVisualizer:
             msg = "mle must have the same length as labels."
             raise ValueError(msg)
 
-        if lower is not None and upper is not None and (
-            len(lower) != num_classes or len(upper) != num_classes
-        ):
+        if lower is not None and upper is not None and (len(lower) != num_classes or len(upper) != num_classes):
             msg = "lower and upper must have the same length as labels."
             raise ValueError(msg)
 
@@ -138,7 +137,7 @@ class CredalVisualizer:
                 lower_c,
                 upper_c,
                 alpha=0.30,
-                label="Credal band (lower–upper)",
+                label="Credal band (lower-upper)",
             )
 
             ax.plot(theta, lower_c, linestyle="--", linewidth=1.5, label="Lower bound")
