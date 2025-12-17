@@ -43,7 +43,6 @@ def radar_factory(num_vars: int, frame: str = "polygon") -> np.ndarray:  # noqa:
             closed: bool = True,
             **kwargs: object,
         ) -> list[Patch]:
-            """Override fill to always close the polygon."""
             patches = super().fill(*args, closed=closed, **kwargs)
             return cast("list[Patch]", patches)
 
@@ -52,30 +51,25 @@ def radar_factory(num_vars: int, frame: str = "polygon") -> np.ndarray:  # noqa:
             *args: object,
             **kwargs: object,
         ) -> list[Line2D]:
-            """Override plot to automatically close lines."""
             lines = cast("list[Line2D]", super().plot(*args, **kwargs))
             for line in lines:
                 self._close_line(line)
             return lines
 
         def _close_line(self, line: Line2D) -> None:
-            """Ensure that the first and last point of a line coincide."""
             x, y = line.get_data()
             if x[0] != x[-1]:
                 line.set_data(np.append(x, x[0]), np.append(y, y[0]))
 
         def set_varlabels(self, labels: list[str]) -> None:
-            """Set the labels for each axis."""
             self.set_thetagrids(np.degrees(theta), labels)
 
         def _gen_axes_patch(self) -> Patch:
-            """Draw the background patch (circle or polygon)."""
             if frame == "polygon":
                 return RegularPolygon((0.5, 0.5), num_vars, radius=0.5)
             return Circle((0.5, 0.5), 0.5)
 
         def _gen_axes_spines(self) -> dict[str, Spine]:
-            """Draw the frame (spines) around the radar plot."""
             if frame == "polygon":
                 spine = Spine(
                     axes=self,
@@ -86,20 +80,16 @@ def radar_factory(num_vars: int, frame: str = "polygon") -> np.ndarray:  # noqa:
                     Affine2D().scale(0.5).translate(0.5, 0.5) + self.transAxes,
                 )
                 return {"polar": spine}
-            # super()._gen_axes_spines returns a dict-like mapping
             spines = super()._gen_axes_spines()
             return cast("dict[str, Spine]", spines)
 
     register_projection(RadarAxes)
 
-    # Close the theta array so polygons are closed by default
     return np.append(theta, theta[0])
 
 
 class CredalVisualizer:
     """Collection of geometric plots for credal predictions."""
-
-    # No explicit __init__ needed; default is fine.
 
     def spider_plot(
         self,
@@ -111,30 +101,6 @@ class CredalVisualizer:
         rmax: float = 1.0,
         ax: Axes | None = None,
     ) -> Axes:
-        """General radar (spider) plot for credal predictions.
-
-        Parameters
-        ----------
-        lower:
-            Lower credal bounds (length K) or None.
-        upper:
-            Upper credal bounds (length K) or None.
-        mle:
-            Point prediction (length K) or None.
-        labels:
-            Class labels (length K).
-        title:
-            Plot title.
-        rmax:
-            Maximum radial value (e.g. 1.0 for probabilities).
-        ax:
-            Optional pre-existing radar axis to plot into.
-
-        Returns:
-        -------
-        ax:
-            Axis containing the spider plot.
-        """
         num_classes = len(labels)
 
         if mle is None and (lower is None or upper is None):
@@ -145,7 +111,9 @@ class CredalVisualizer:
             msg = "mle must have the same length as labels."
             raise ValueError(msg)
 
-        if lower is not None and upper is not None and (len(lower) != num_classes or len(upper) != num_classes):
+        if lower is not None and upper is not None and (
+            len(lower) != num_classes or len(upper) != num_classes
+        ):
             msg = "lower and upper must have the same length as labels."
             raise ValueError(msg)
 
@@ -161,14 +129,21 @@ class CredalVisualizer:
         ax.set_ylim(0.0, rmax)
         ax.set_varlabels(labels)
 
-        # Credal set region
         if lower is not None and upper is not None:
             lower_c = np.append(lower, lower[0])
             upper_c = np.append(upper, upper[0])
-            ax.fill(theta, upper_c, alpha=0.25, label="Credal set")
-            ax.fill(theta, lower_c, color="white")
 
-        # MLE point
+            ax.fill_between(
+                theta,
+                lower_c,
+                upper_c,
+                alpha=0.30,
+                label="Credal band (lower–upper)",
+            )
+
+            ax.plot(theta, lower_c, linestyle="--", linewidth=1.5, label="Lower bound")
+            ax.plot(theta, upper_c, linestyle="-", linewidth=1.5, label="Upper bound")
+
         if mle is not None:
             idx = int(np.argmax(mle))
             ax.scatter(
@@ -176,7 +151,8 @@ class CredalVisualizer:
                 [float(mle[idx])],
                 s=80,
                 color="red",
-                label="MLE",
+                label="MLE (argmax)",
+                zorder=5,
             )
 
         ax.set_title(title, pad=20)
