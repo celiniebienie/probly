@@ -26,6 +26,7 @@ __all__ = [
     "RED",
     "WHITE",
     "_MIN_MAX_STYLES",
+    "choose_min_max_style",
     "get_sign_color",
 ]
 
@@ -68,6 +69,7 @@ _MIN_MAX_STYLES = {
 
 
 def choose_min_max_style(value: int) -> tuple[str, str]:
+    """Takes stylekey and reacts accordingly."""
     try:
         return _MIN_MAX_STYLES[value]
     except KeyError as err:
