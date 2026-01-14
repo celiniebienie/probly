@@ -4,6 +4,8 @@ from __future__ import annotations
 
 __all__ = [
     "BLUE",
+    "CBAR_TICKS",
+    "CBAR_TITLE",
     "CLASS_LABLES_FONTSIZE",
     "FILL_ALPHA",
     "HULL_EDGE",
@@ -16,6 +18,8 @@ __all__ = [
     "MIN_MAX_LINESTYLE_2",
     "MIN_MAX_LINE_WIDTH",
     "PROB_ALPHA",
+    "PROB_CMAP_COLORS",
+    "PROB_CMAP_NAME",
     "PROB_FONT_SIZE",
     "PROB_LINESTYLE",
     "PROB_LINE_WIDTH",
@@ -32,18 +36,30 @@ WHITE: str = "#ffffff"
 LINES: str = "#cccccc"
 FILL_ALPHA: float = 0.25
 CLASS_LABLES_FONTSIZE: int = 8
+
 HULL_LINE_WIDTH: float = 2
 HULL_EDGE: str = BLUE
 HULL_FACE: str = BLUE
 HULL_EDGE_WIDTH: float = 2.0
+
 PROB_LINESTYLE: str = ".."
 PROB_LINE_WIDTH: float = 1
 PROB_FONT_SIZE: int = 9
 PROB_ALPHA: float = 1.0
+
 MIN_MAX_LINE_WIDTH: float = 1.5
 MIN_MAX_ALPHA: float = 0.7
 MIN_MAX_LINESTYLE_1: str = "--"
 MIN_MAX_LINESTYLE_2: str = "-."
+
+PROB_CMAP_NAME: str = "probly_colors"
+PROB_CMAP_COLORS: tuple[str, str] = (BLUE, RED)
+
+CBAR_TITLE: str = "Value:"
+CBAR_TICKS: tuple[float, ...] = (0.0, 0.2, 0.4, 0.6, 0.8, 1.0)
+CBAR_TITLE_FONTSIZE: int = 11
+CBAR_TITLE_PAD: float = 10
+CBAR_TITLE_LOC: str = "left"
 
 _MIN_MAX_STYLES = {
     1: (RED, "--"),
