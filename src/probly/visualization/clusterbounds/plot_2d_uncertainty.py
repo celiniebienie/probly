@@ -69,7 +69,7 @@ def plot_2d_uncertainty(
     colors = cmap(np.linspace(0.4, 1, n_clusters))
 
     for i, (x, y) in enumerate(validated_data):
-        plt.scatter(x, y, s=10, alpha=0.8, color=colors[i], label=f"Cluster {i}")
+        ax.scatter(x, y, s=10, alpha=0.8, color=colors[i], label=f"Cluster {i}")
 
     ax.legend(loc="upper right")
     plt.show()
