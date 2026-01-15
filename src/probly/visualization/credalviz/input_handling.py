@@ -9,9 +9,9 @@ import numpy as np
 if TYPE_CHECKING:
     import matplotlib.pyplot as plt
 
-from probly.visualization.plot_2d import IntervalVisualizer
-from probly.visualization.plot_3d import TernaryVisualizer
-from probly.visualization.plot_multid import MultiVisualizer
+from probly.visualization.credalviz.plot_2d import IntervalVisualizer
+from probly.visualization.credalviz.plot_3d import TernaryVisualizer
+from probly.visualization.credalviz.plot_multid import MultiVisualizer
 
 
 def check_num_classes(input_data: np.ndarray) -> int:
@@ -143,9 +143,8 @@ def dispatch_plot(
 
     mle_flag, credal_flag = _choice_flag_result(choice)
 
-    if minmax is None:
+    if minmax is None or (minmax is True and credal_flag is False):
         minmax = False
-
     # Depending on number of classes chooses correct plotting function.
     if n_classes == 2:
         viz = IntervalVisualizer()
