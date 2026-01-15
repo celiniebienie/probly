@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.svm import SVC
 
 
 def check_shape(input_data: np.ndarray) -> np.ndarray:
@@ -34,6 +35,27 @@ def check_shape(input_data: np.ndarray) -> np.ndarray:
         raise ValueError(msg_values)
 
     return input_data
+
+
+def _reshape_data_for_x(input_data: np.ndarray) -> np.ndarray:
+    """Reshapes clusters into two dimensions.
+
+    Args:
+        input_data: 3D numpy array with shape (n_clusters, 2, n_samples).
+    """
+    X = input_data.transpose(0, 2, 1)  # noqa: N806
+    X = X.reshape(-1, 2)  # noqa: N806
+    return X
+
+
+def _reshape_data_for_y(input_data: np.ndarray) -> np.ndarray:
+    n_classes = input_data.shape[0]
+    n_samples = input_data.shape[2]
+    y = []
+    for i in range(n_classes):
+        y.extend([i] * n_samples)
+    y = np.array(y)
+    return y
 
 
 def plot_2d_uncertainty(
@@ -70,6 +92,24 @@ def plot_2d_uncertainty(
 
     for i, (x, y) in enumerate(validated_data):
         ax.scatter(x, y, s=10, alpha=0.8, color=colors[i], label=f"Cluster {i}")
+
+    X = _reshape_data_for_x(validated_data)  # noqa: N806
+    y = _reshape_data_for_y(validated_data)
+
+    clf = SVC(kernel="rbf", C=0.5, gamma="scale")
+    clf.fit(X, y)
+
+    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    xx, yy = np.meshgrid(
+        np.linspace(x_min, x_max, 400),
+        np.linspace(y_min, y_max, 400),
+    )
+    grid = np.c_[xx.ravel(), yy.ravel()]
+
+    Z = clf.predict(grid).reshape(xx.shape)  # noqa: N806
+
+    ax.contourf(xx, yy, Z, alpha=0.4, levels=np.arange(n_clusters + 1) - 0.5, cmap=cmap)
 
     ax.legend(loc="upper right")
     plt.show()
