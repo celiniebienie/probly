@@ -9,10 +9,14 @@
         <title>Sprint Review: Credal Set Visualization &amp; Input Handling - probly 0.3.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=201d0c9a" />
     
     
 
@@ -206,125 +210,51 @@
 <div id="searchbox"></div><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Content</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">The <code class="docutils literal notranslate"><span class="pre">probly</span></code> Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core_concepts.html">Core Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main_components.html">Main Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_topics.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_and_tutorials.html">Examples and Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../methods.html">Implemented methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="fashionmnist_ood_ensemble.html">Out-of-Distribution Detection with an Ensemble</a></li>
-<li class="toctree-l1"><a class="reference internal" href="label_relaxation_calibration.html">Calibration with Label Relaxation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sklearn_selective_prediction.html">Using probly with scikit-learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="temperature_scaling_calibration.html">Calibration using Temperature Scaling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="train_bnn_classification.html">Bayesian Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="train_evidential_classification.html">Evidential Model for Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="train_evidential_regression.html">Evidential Regression Model</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.datasets.html">probly.datasets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of probly.datasets</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.datasets.torch.html">probly.datasets.torch</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.evaluation.html">probly.evaluation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of probly.evaluation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.evaluation.metrics.html">probly.evaluation.metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.evaluation.tasks.html">probly.evaluation.tasks</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.layers.html">probly.layers</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of probly.layers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.layers.flax.html">probly.layers.flax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.layers.torch.html">probly.layers.torch</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.plot.html">probly.plot</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of probly.plot</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.plot.credal.html">probly.plot.credal</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../api/probly.predictor.html">probly.predictor</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.quantification.html">probly.quantification</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of probly.quantification</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.quantification.classification.html">probly.quantification.classification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.quantification.regression.html">probly.quantification.regression</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.representation.html">probly.representation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of probly.representation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/probly.representation.credal_set.html">probly.representation.credal_set</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of probly.representation.credal_set</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.credal_set.array.html">probly.representation.credal_set.array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.credal_set.array_functions.html">probly.representation.credal_set.array_functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.credal_set.common.html">probly.representation.credal_set.common</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.representation.distribution.html">probly.representation.distribution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.representation.representer.html">probly.representation.representer</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/probly.representation.sampling.html">probly.representation.sampling</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of probly.representation.sampling</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.array_sample.html">probly.representation.sampling.array_sample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.array_sample_axis_tracking.html">probly.representation.sampling.array_sample_axis_tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.array_sample_functions.html">probly.representation.sampling.array_sample_functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.common_sample.html">probly.representation.sampling.common_sample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.flax_sampler.html">probly.representation.sampling.flax_sampler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.jax_sample.html">probly.representation.sampling.jax_sample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.sample.html">probly.representation.sampling.sample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.sampler.html">probly.representation.sampling.sampler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.torch_sample.html">probly.representation.sampling.torch_sample</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.representation.sampling.torch_sampler.html">probly.representation.sampling.torch_sampler</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.train.html">probly.train</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of probly.train</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/probly.train.bayesian.html">probly.train.bayesian</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of probly.train.bayesian</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.train.bayesian.torch.html">probly.train.bayesian.torch</a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/probly.train.calibration.html">probly.train.calibration</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of probly.train.calibration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.train.calibration.torch.html">probly.train.calibration.torch</a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/probly.train.evidential.html">probly.train.evidential</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of probly.train.evidential</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/probly.train.evidential.torch.html">probly.train.evidential.torch</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.transformation.html">probly.transformation</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of probly.transformation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.transformation.bayesian.html">probly.transformation.bayesian</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.transformation.dropconnect.html">probly.transformation.dropconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.transformation.dropout.html">probly.transformation.dropout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.transformation.ensemble.html">probly.transformation.ensemble</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../api/probly.transformation.evidential.html">probly.transformation.evidential</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of probly.transformation.evidential</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../api/probly.transformation.evidential.classification.html">probly.transformation.evidential.classification</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of probly.transformation.evidential.classification</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l5"><a class="reference internal" href="../api/probly.transformation.evidential.classification.common.html">probly.transformation.evidential.classification.common</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../api/probly.transformation.evidential.classification.torch.html">probly.transformation.evidential.classification.torch</a></li>
-</ul>
-</li>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../api/probly.transformation.evidential.regression.html">probly.transformation.evidential.regression</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of probly.transformation.evidential.regression</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l5"><a class="reference internal" href="../api/probly.transformation.evidential.regression.common.html">probly.transformation.evidential.regression.common</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../api/probly.transformation.evidential.regression.torch.html">probly.transformation.evidential.regression.torch</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.traverse_nn.html">probly.traverse_nn</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of probly.traverse_nn</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.traverse_nn.common.html">probly.traverse_nn.common</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.traverse_nn.flax.html">probly.traverse_nn.flax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.traverse_nn.torch.html">probly.traverse_nn.torch</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../api/probly.utils.html">probly.utils</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of probly.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.utils.errors.html">probly.utils.errors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.utils.probabilities.html">probly.utils.probabilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.utils.sets.html">probly.utils.sets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.utils.switchdispatch.html">probly.utils.switchdispatch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/probly.utils.torch.html">probly.utils.torch</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to probly 🏔️</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References and Further Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ and Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/examples/index.html">Notebook Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Notebook Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../notebooks/examples/utilities_and_layers/index.html">Utilities and Layers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Utilities and Layers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/utilities_and_layers/custom_loss_functions.html">Custom Loss Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/utilities_and_layers/metrics.html">Evaluation Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/utilities_and_layers/probabilistic_layers.html">Key Probabilistic Layers in <code class="docutils literal notranslate"><span class="pre">probly</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/utilities_and_layers/utility_functions.html">Utility Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../notebooks/examples/evaluation_and_quantification/index.html">Evaluation and Quantification</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Evaluation and Quantification</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/evaluation_and_quantification/calibration_metrics.html">Calibration Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/evaluation_and_quantification/interpretation_techniques.html">Interpretation techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/examples/evaluation_and_quantification/visualization_tools.html">Visualisation Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/bayesian_transformation.html">Bayesian Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/dropconnect_transformation.html">Dropconnect Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/dropout_transformation.html">Dropout Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/ensemble_transformation.html">Ensemble Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/evidential_classification_transformation.html">Evidential Classification Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/evidential_regression_transformation.html">Evidential Regression Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/fashionmnist_ood_ensemble.html">Out-of-Distribution Detection with an Ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/label_relaxation_calibration.html">Calibration with Label Relaxation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/lazy_dispatch_test.html">Lazy Dispatch Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/multilib_demo.html">Multilib Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/pytraverse_tutorial.html">A Brief Introduction to PyTraverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/sklearn_selective_prediction.html">Using probly with scikit-learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/temperature_scaling_calibration.html">Calibration using Temperature Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_bnn_classification.html">Bayesian Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_evidential_classification.html">Evidential Model for Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_evidential_regression.html">Evidential Regression Model</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -376,21 +306,26 @@
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from typing import Any
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 
-from matplotlib.patches import Circle, Polygon, RegularPolygon
-from matplotlib.path import Path
-from matplotlib.projections import register_projection
-from matplotlib.projections.polar import PolarAxes
-import matplotlib.pyplot as plt
-from matplotlib.spines import Spine
-from matplotlib.transforms import Affine2D
-import numpy as np
-from scipy.spatial import ConvexHull
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">RegularPolygon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.projections</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_projection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.projections.polar</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolarAxes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.spines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Spine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Affine2D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConvexHull</span>
 
-import probly.visualization.config as cfg
+<span class="kn">import</span><span class="w"> </span><span class="nn">probly.visualization.config</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfg</span>
 
-print(&quot;✅ Imports loaded successfully&quot;)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Imports loaded successfully&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Imports loaded successfully
 </pre></div>
 </div>
 </div>
@@ -401,246 +336,251 @@ print(&quot;✅ Imports loaded successfully&quot;)
 <p>Note for the review: In this block, we simulate the modules <code class="docutils literal notranslate"><span class="pre">plot_2d.py</span></code> (Interval-Plots), <code class="docutils literal notranslate"><span class="pre">plot_3d.py</span></code> (Ternary-Plots), and <code class="docutils literal notranslate"><span class="pre">plot_multid.py</span></code>(Spider-Plots) that we implemented during this sprint, so this notebook runs standalone.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># --- 1. SPIDER PLOT LOGIC  ---
-def radar_factory(num_vars: int, frame: str = &quot;circle&quot;) -&gt; np.ndarray:  # noqa: C901
-    &quot;&quot;&quot;Create a radar chart with `num_vars` axes.&quot;&quot;&quot;
-    theta = np.linspace(0, 2 * np.pi, num_vars, endpoint=False)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 1. SPIDER PLOT LOGIC  ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">radar_factory</span><span class="p">(</span><span class="n">num_vars</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">frame</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;circle&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>  <span class="c1"># noqa: C901</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a radar chart with `num_vars` axes.&quot;&quot;&quot;</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num_vars</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-    class RadarTransform(PolarAxes.PolarTransform):
-        def transform_path_non_affine(self, path: Path) -&gt; Path:
-            # Note: _interpolation_steps is internal logic needed for this projection hack
-            if path._interpolation_steps &gt; 1:  # noqa: SLF001
-                path = path.interpolated(num_vars)
-            return Path(self.transform(path.vertices), path.codes)
+    <span class="k">class</span><span class="w"> </span><span class="nc">RadarTransform</span><span class="p">(</span><span class="n">PolarAxes</span><span class="o">.</span><span class="n">PolarTransform</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">transform_path_non_affine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+            <span class="c1"># Note: _interpolation_steps is internal logic needed for this projection hack</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">_interpolation_steps</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># noqa: SLF001</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">interpolated</span><span class="p">(</span><span class="n">num_vars</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">vertices</span><span class="p">),</span> <span class="n">path</span><span class="o">.</span><span class="n">codes</span><span class="p">)</span>
 
-    class RadarAxes(PolarAxes):
-        name = &quot;radar&quot;
-        PolarTransform = RadarTransform
+    <span class="k">class</span><span class="w"> </span><span class="nc">RadarAxes</span><span class="p">(</span><span class="n">PolarAxes</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;radar&quot;</span>
+        <span class="n">PolarTransform</span> <span class="o">=</span> <span class="n">RadarTransform</span>
 
-        def __init__(self, *args: Any, **kwargs: Any) -&gt; None:  # noqa: ANN401
-            super().__init__(*args, **kwargs)
-            self.set_theta_zero_location(&quot;N&quot;)
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_theta_zero_location</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
 
-        def fill(self, *args: Any, **kwargs: Any) -&gt; Any:  # noqa: ANN401
-            &quot;&quot;&quot;Override fill to handle closed polygons by default.&quot;&quot;&quot;
-            closed = kwargs.pop(&quot;closed&quot;, True)
-            return super().fill(closed=closed, *args, **kwargs)  # noqa: B026
+        <span class="k">def</span><span class="w"> </span><span class="nf">fill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Override fill to handle closed polygons by default.&quot;&quot;&quot;</span>
+            <span class="n">closed</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;closed&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># noqa: B026</span>
 
-        def plot(self, *args: Any, **kwargs: Any) -&gt; Any:  # noqa: ANN401
-            lines = super().plot(*args, **kwargs)
-            for line in lines:
-                self._close_line(line)
-            return lines
+        <span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_close_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">lines</span>
 
-        def _close_line(self, line: Any) -&gt; None:  # noqa: ANN401
-            x, y = line.get_data()
-            if x[0] != x[-1]:
-                x = np.append(x, x[0])
-                y = np.append(y, y[0])
-                line.set_data(x, y)
+        <span class="k">def</span><span class="w"> </span><span class="nf">_close_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-        def set_varlabels(self, labels: list[str]) -&gt; None:
-            self.set_thetagrids(np.degrees(theta), labels)
+        <span class="k">def</span><span class="w"> </span><span class="nf">set_varlabels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_thetagrids</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">labels</span><span class="p">)</span>
 
-        def _gen_axes_patch(self) -&gt; Any:  # noqa: ANN401
-            if frame == &quot;circle&quot;:
-                return Circle((0.5, 0.5), 0.5)
-            if frame == &quot;polygon&quot;:
-                return RegularPolygon((0.5, 0.5), num_vars, radius=0.5, edgecolor=&quot;k&quot;)
-            msg = f&quot;Unknown value for &#39;frame&#39;: {frame}&quot;
-            raise ValueError(msg)
+        <span class="k">def</span><span class="w"> </span><span class="nf">_gen_axes_patch</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+            <span class="k">if</span> <span class="n">frame</span> <span class="o">==</span> <span class="s2">&quot;circle&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Circle</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">frame</span> <span class="o">==</span> <span class="s2">&quot;polygon&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">RegularPolygon</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">num_vars</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unknown value for &#39;frame&#39;: </span><span class="si">{</span><span class="n">frame</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-        def _gen_axes_spines(self) -&gt; Any:  # noqa: ANN401
-            if frame == &quot;circle&quot;:
-                return super()._gen_axes_spines()
-            if frame == &quot;polygon&quot;:
-                spine = Spine(axes=self, spine_type=&quot;circle&quot;, path=Path.unit_regular_polygon(num_vars))
-                spine.set_transform(Affine2D().scale(0.5).translate(0.5, 0.5) + self.transAxes)
-                return {&quot;polar&quot;: spine}
-            msg = f&quot;Unknown value for &#39;frame&#39;: {frame}&quot;
-            raise ValueError(msg)
+        <span class="k">def</span><span class="w"> </span><span class="nf">_gen_axes_spines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+            <span class="k">if</span> <span class="n">frame</span> <span class="o">==</span> <span class="s2">&quot;circle&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_gen_axes_spines</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">frame</span> <span class="o">==</span> <span class="s2">&quot;polygon&quot;</span><span class="p">:</span>
+                <span class="n">spine</span> <span class="o">=</span> <span class="n">Spine</span><span class="p">(</span><span class="n">axes</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">spine_type</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">Path</span><span class="o">.</span><span class="n">unit_regular_polygon</span><span class="p">(</span><span class="n">num_vars</span><span class="p">))</span>
+                <span class="n">spine</span><span class="o">.</span><span class="n">set_transform</span><span class="p">(</span><span class="n">Affine2D</span><span class="p">()</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;polar&quot;</span><span class="p">:</span> <span class="n">spine</span><span class="p">}</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unknown value for &#39;frame&#39;: </span><span class="si">{</span><span class="n">frame</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-    register_projection(RadarAxes)
-    return theta
-
-
-# --- 2. INTERVAL PLOT LOGIC  ---
-class IntervalVisualizer:
-    def probs_to_coords_2d(self, probs: np.ndarray) -&gt; tuple[float, float]:
-        &quot;&quot;&quot;Convert probabilities to 2D coordinates.&quot;&quot;&quot;
-        p1, p2 = probs
-        return p2, 0
-
-    def interval_plot(self, probs: np.ndarray, ax: plt.Axes | None = None) -&gt; plt.Axes:
-        &quot;&quot;&quot;Draw an interval plot for binary classification.&quot;&quot;&quot;
-        coords = np.array([self.probs_to_coords_2d(p) for p in probs])
-
-        if ax is None:
-            fig, ax = plt.subplots(figsize=(6, 1))
-
-        y_marg = np.array([0.1, -0.1])
-
-        # Black base line
-        plt.plot([0, 1], [0, 0], color=cfg.BLACK, linewidth=cfg.HULL_LINE_WIDTH, zorder=0)
-
-        # Blue Area (Credal Set)
-        coord_max = np.max(coords[:, 0])
-        coord_min = np.min(coords[:, 0])
-        ax.fill_betweenx(y_marg, coord_max, coord_min, color=cfg.BLUE, alpha=cfg.FILL_ALPHA, zorder=2)
-        # Red Points
-        ax.scatter(coords[:, 0], coords[:, 1], color=cfg.RED, zorder=3)
-
-        ax.axis(&quot;off&quot;)
-        ax.set_ylim((-0.2, 0.2))
-        y_anchor = -0.07
-
-        # Labels
-        y_anchor = -0.07
-
-        ax.text(0, y_anchor - 0.07, &quot;Class A&quot;, ha=&quot;center&quot;, va=&quot;top&quot;)
-        ax.text(1, y_anchor - 0.07, &quot;Class B&quot;, ha=&quot;center&quot;, va=&quot;top&quot;)
-
-        tick_values = np.linspace(0.0, 1.0, 11)
-        tick_length = 0.02
-        label_offset = -0.05
-        e1 = np.array([0.0, 0.0])
-        e2 = np.array([1.0, 0.0])
-        edges = [(e1, e2, &quot;A&quot;)]
-
-        def lerp(p: np.ndarray, q: np.ndarray, t: float) -&gt; np.ndarray:
-            &quot;&quot;&quot;Linear Interpolation for line values.&quot;&quot;&quot;
-            return (1 - t) * p + t * q
-
-        for p, q, axis_name in edges:  # noqa: B007
-            edge_vec = q - p
-            normal = np.array([-edge_vec[1], edge_vec[0]])
-            normal = normal / np.linalg.norm(normal)
-
-            for t in tick_values:
-                pos = lerp(p, q, t)
-
-                tick_start = pos - normal * (tick_length / 2)
-                tick_end = pos + normal * (tick_length / 2)
-                ax.plot(
-                    [tick_start[0], tick_end[0]],
-                    [tick_start[1], tick_end[1]],
-                    color=cfg.BLACK,
-                )
-                label_pos = pos + normal * label_offset
-                ax.text(
-                    label_pos[0],
-                    label_pos[1],
-                    f&quot;{t:.1f}&quot;,
-                    ha=&quot;center&quot;,
-                    va=&quot;center&quot;,
-                    fontsize=8,
-                )
-        ax.legend(loc=&quot;upper left&quot;)
-
-        return ax
+    <span class="n">register_projection</span><span class="p">(</span><span class="n">RadarAxes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">theta</span>
 
 
-# --- 3. TERNARY PLOT LOGIC  ---
-class TernaryVisualizer:
-    def probs_to_coords(self, probs: np.ndarray) -&gt; tuple[float, float]:
-        &quot;&quot;&quot;Convert 3-class probabilities to Cartesian coordinates for a ternary plot.&quot;&quot;&quot;
-        p1, p2, p3 = probs
-        x = p2 + 0.5 * p3
-        y = (np.sqrt(3) / 2) * p3
-        return x, y
+<span class="c1"># --- 2. INTERVAL PLOT LOGIC  ---</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntervalVisualizer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">probs_to_coords_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert probabilities to 2D coordinates.&quot;&quot;&quot;</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">probs</span>
+        <span class="k">return</span> <span class="n">p2</span><span class="p">,</span> <span class="mi">0</span>
 
-    def ternary_plot(self, probs: np.ndarray, ax: plt.Axes | None = None, **scatter_kwargs: Any) -&gt; plt.Axes:  # noqa: ANN401
-        &quot;&quot;&quot;Create a ternary simplex plot.&quot;&quot;&quot;
-        coords = np.array([self.probs_to_coords(p) for p in probs])
-        if ax is None:
-            fig, ax = plt.subplots(figsize=(6, 6))
+    <span class="k">def</span><span class="w"> </span><span class="nf">interval_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">ax</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Draw an interval plot for binary classification.&quot;&quot;&quot;</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">probs_to_coords_2d</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">])</span>
 
-        def lerp(p: np.ndarray, q: np.ndarray, t: float) -&gt; np.ndarray:
-            return (1 - t) * p + t * q
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
-        # Vertices
-        v1 = np.array([0.0, 0.0])
-        v2 = np.array([1.0, 0.0])
-        v3 = np.array([0.5, np.sqrt(3) / 2])
+        <span class="n">y_marg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">])</span>
 
-        # Draw Triangle Frame
-        ax.plot([v1[0], v2[0], v3[0], v1[0]], [v1[1], v2[1], v3[1], v1[1]], color=cfg.BLACK)
-        ax.axis(&quot;off&quot;)
+        <span class="c1"># Black base line</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">BLACK</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">HULL_LINE_WIDTH</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-        # Labels for Classes
-        offset_x = 0.06
-        ax.text(v1[0] + 0.02, v1[1] - offset_x, &quot;Class 1&quot;, ha=&quot;right&quot;, va=&quot;top&quot;, fontsize=12)
-        ax.text(v2[0] + 0.02, v2[1] - offset_x, &quot;Class 2&quot;, ha=&quot;left&quot;, va=&quot;top&quot;, fontsize=12)
-        ax.text(v3[0], v3[1] + offset_x, &quot;Class 3&quot;, ha=&quot;center&quot;, va=&quot;bottom&quot;, fontsize=12)
+        <span class="c1"># Blue Area (Credal Set)</span>
+        <span class="n">coord_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">coord_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">(</span><span class="n">y_marg</span><span class="p">,</span> <span class="n">coord_max</span><span class="p">,</span> <span class="n">coord_min</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">FILL_ALPHA</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># Red Points</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-        # Ticks and Tick Labels
-        tick_values = np.linspace(0.1, 0.9, 11)  # generate 11 ticks between 0.0 and 1.0
-        edges = [(v1, v2), (v2, v3), (v3, v1)]
-        tick_length = 0.01
-        label_offset = -0.05  # Pushes text outwards
-        edge_lable = &quot;0.0 / 1.0&quot;
-        ax.text(v1[0], v1[1], edge_lable, ha=&quot;right&quot;, va=&quot;top&quot;, fontsize=8)
-        ax.text(v2[0], v2[1], edge_lable, ha=&quot;left&quot;, va=&quot;top&quot;, fontsize=8)
-        ax.text(v3[0], v3[1], edge_lable, ha=&quot;center&quot;, va=&quot;bottom&quot;, fontsize=8)
-        for p, q in edges:
-            edge_vec = q - p
-            # Normal vector pointing &quot;inside&quot; (rotated 90deg CCW)
-            normal = np.array([-edge_vec[1], edge_vec[0]])
-            normal = normal / np.linalg.norm(normal)
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+        <span class="n">y_anchor</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.07</span>
 
-            for t in tick_values:
-                pos = lerp(p, q, t)
+        <span class="c1"># Labels</span>
+        <span class="n">y_anchor</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.07</span>
 
-                # Draw small tick line
-                tick_start = pos - normal * (tick_length / 2)
-                tick_end = pos + normal * (tick_length / 2)
-                ax.plot([tick_start[0], tick_end[0]], [tick_start[1], tick_end[1]], color=cfg.BLACK)
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_anchor</span> <span class="o">-</span> <span class="mf">0.07</span><span class="p">,</span> <span class="s2">&quot;Class A&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_anchor</span> <span class="o">-</span> <span class="mf">0.07</span><span class="p">,</span> <span class="s2">&quot;Class B&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
 
-                # Draw tick label (e.g. 0.1, 0.2...)
-                label_pos = pos + normal * label_offset
-                ax.text(
-                    label_pos[0],
-                    label_pos[1],
-                    f&quot;{t:.1f}&quot;,
-                    ha=&quot;center&quot;,
-                    va=&quot;center&quot;,
-                    fontsize=8,
-                )
+        <span class="n">tick_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+        <span class="n">tick_length</span> <span class="o">=</span> <span class="mf">0.02</span>
+        <span class="n">label_offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.05</span>
+        <span class="n">e1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">e2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)]</span>
 
-        ax.set_aspect(&quot;equal&quot;, &quot;box&quot;)
-        ax.set_xlim(-0.1, 1.1)
-        ax.set_ylim(-0.1, np.sqrt(3) / 2 + 0.2)
+        <span class="k">def</span><span class="w"> </span><span class="nf">lerp</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Linear Interpolation for line values.&quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="n">q</span>
 
-        # Scatter points (Blue)
-        ax.scatter(coords[:, 0], coords[:, 1], **scatter_kwargs)
-        return ax
+        <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">axis_name</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>  <span class="c1"># noqa: B007</span>
+            <span class="n">edge_vec</span> <span class="o">=</span> <span class="n">q</span> <span class="o">-</span> <span class="n">p</span>
+            <span class="n">normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">edge_vec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">edge_vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+            <span class="n">normal</span> <span class="o">=</span> <span class="n">normal</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span>
 
-    def plot_convex_hull(
-        self,
-        probs: np.ndarray,
-        ax: plt.Axes | None = None,
-    ) -&gt; plt.Axes:
-        &quot;&quot;&quot;Draw the convex hull (green area) around points.&quot;&quot;&quot;
-        coords = np.array([self.probs_to_coords(p) for p in probs])
-        unique = np.unique(coords, axis=0)
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tick_values</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">lerp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
-        if len(unique) &gt;= 3:
-            hull = ConvexHull(coords)
-            hull_pts = coords[hull.vertices]
-            # Polygon Drawing
-            poly = Polygon(
-                hull_pts,
-                closed=True,
-                facecolor=cfg.HULL_FACE,
-                edgecolor=cfg.HULL_EDGE,
-                alpha=cfg.FILL_ALPHA,
-                linewidth=cfg.HULL_LINE_WIDTH,
-            )
-            ax.add_patch(poly)
-        return ax
+                <span class="n">tick_start</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">-</span> <span class="n">normal</span> <span class="o">*</span> <span class="p">(</span><span class="n">tick_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">tick_end</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">normal</span> <span class="o">*</span> <span class="p">(</span><span class="n">tick_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">tick_start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tick_end</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                    <span class="p">[</span><span class="n">tick_start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tick_end</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">BLACK</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">label_pos</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">normal</span> <span class="o">*</span> <span class="n">label_offset</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+                    <span class="n">label_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">label_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ax</span>
 
 
-print(&quot;✅ Backend modules loaded successfully.&quot;)
+<span class="c1"># --- 3. TERNARY PLOT LOGIC  ---</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TernaryVisualizer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">probs_to_coords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert 3-class probabilities to Cartesian coordinates for a ternary plot.&quot;&quot;&quot;</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">probs</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">p3</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">ternary_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">ax</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">scatter_kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a ternary simplex plot.&quot;&quot;&quot;</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">probs_to_coords</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">lerp</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="n">q</span>
+
+        <span class="c1"># Vertices</span>
+        <span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">v3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])</span>
+
+        <span class="c1"># Draw Triangle Frame</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Labels for Classes</span>
+        <span class="n">offset_x</span> <span class="o">=</span> <span class="mf">0.06</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">offset_x</span><span class="p">,</span> <span class="s2">&quot;Class 1&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">v2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">v2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">offset_x</span><span class="p">,</span> <span class="s2">&quot;Class 2&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">v3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset_x</span><span class="p">,</span> <span class="s2">&quot;Class 3&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+        <span class="c1"># Ticks and Tick Labels</span>
+        <span class="n">tick_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>  <span class="c1"># generate 11 ticks between 0.0 and 1.0</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">),</span> <span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">),</span> <span class="p">(</span><span class="n">v3</span><span class="p">,</span> <span class="n">v1</span><span class="p">)]</span>
+        <span class="n">tick_length</span> <span class="o">=</span> <span class="mf">0.01</span>
+        <span class="n">label_offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.05</span>  <span class="c1"># Pushes text outwards</span>
+        <span class="n">edge_lable</span> <span class="o">=</span> <span class="s2">&quot;0.0 / 1.0&quot;</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">edge_lable</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">v2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">edge_lable</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">v3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">edge_lable</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+            <span class="n">edge_vec</span> <span class="o">=</span> <span class="n">q</span> <span class="o">-</span> <span class="n">p</span>
+            <span class="c1"># Normal vector pointing &quot;inside&quot; (rotated 90deg CCW)</span>
+            <span class="n">normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">edge_vec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">edge_vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+            <span class="n">normal</span> <span class="o">=</span> <span class="n">normal</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tick_values</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">lerp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+                <span class="c1"># Draw small tick line</span>
+                <span class="n">tick_start</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">-</span> <span class="n">normal</span> <span class="o">*</span> <span class="p">(</span><span class="n">tick_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">tick_end</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">normal</span> <span class="o">*</span> <span class="p">(</span><span class="n">tick_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">tick_start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tick_end</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">tick_start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tick_end</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+
+                <span class="c1"># Draw tick label (e.g. 0.1, 0.2...)</span>
+                <span class="n">label_pos</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">normal</span> <span class="o">*</span> <span class="n">label_offset</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+                    <span class="n">label_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">label_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">)</span>
+
+        <span class="c1"># Scatter points (Blue)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">scatter_kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ax</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_convex_hull</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+        <span class="n">ax</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Draw the convex hull (green area) around points.&quot;&quot;&quot;</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">probs_to_coords</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">])</span>
+        <span class="n">unique</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">hull</span> <span class="o">=</span> <span class="n">ConvexHull</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+            <span class="n">hull_pts</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="n">hull</span><span class="o">.</span><span class="n">vertices</span><span class="p">]</span>
+            <span class="c1"># Polygon Drawing</span>
+            <span class="n">poly</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span>
+                <span class="n">hull_pts</span><span class="p">,</span>
+                <span class="n">closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">facecolor</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">HULL_FACE</span><span class="p">,</span>
+                <span class="n">edgecolor</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">HULL_EDGE</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">FILL_ALPHA</span><span class="p">,</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">HULL_LINE_WIDTH</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ax</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Backend modules loaded successfully.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Backend modules loaded successfully.
 </pre></div>
 </div>
 </div>
@@ -658,67 +598,67 @@ print(&quot;✅ Backend modules loaded successfully.&quot;)
 <p><code class="docutils literal notranslate"><span class="pre">n&gt;3</span></code> -&gt; Spider Plot</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def check_shape(input_data: np.ndarray) -&gt; np.ndarray:
-    if not isinstance(input_data, np.ndarray):
-        msg = &quot;Input must be a numpy array.&quot;
-        raise TypeError(msg)
-    if not np.allclose(input_data.sum(axis=-1), 1, atol=1e-5):
-        msg = &quot;Probabilities must sum to 1.&quot;
-        raise ValueError(msg)
-    return input_data
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_shape</span><span class="p">(</span><span class="n">input_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Input must be a numpy array.&quot;</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">input_data</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Probabilities must sum to 1.&quot;</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">input_data</span>
 
 
-def dispatch_plot(input_data: np.ndarray, labels: list[str] | None = None) -&gt; None:
-    &quot;&quot;&quot;The Main Function.&quot;&quot;&quot;
-    input_data = check_shape(input_data)
+<span class="k">def</span><span class="w"> </span><span class="nf">dispatch_plot</span><span class="p">(</span><span class="n">input_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Main Function.&quot;&quot;&quot;</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">check_shape</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
 
-    points = input_data.reshape(-1, input_data.shape[-1]) if input_data.ndim == 3 else input_data
-    n_classes = points.shape[-1]
+    <span class="n">points</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">input_data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="n">input_data</span>
+    <span class="n">n_classes</span> <span class="o">=</span> <span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    print(f&quot;Detected Input: {n_classes} Classes -&gt; &quot;, end=&quot;&quot;)
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Detected Input: </span><span class="si">{</span><span class="n">n_classes</span><span class="si">}</span><span class="s2"> Classes -&gt; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
-    if n_classes == 2:
-        print(&quot;Starting Interval Plot...&quot;)
-        viz = IntervalVisualizer()
-        viz.interval_plot(points)
-        plt.title(&quot;Interval Plot (2 Classes)&quot;)
-        plt.show()
+    <span class="k">if</span> <span class="n">n_classes</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting Interval Plot...&quot;</span><span class="p">)</span>
+        <span class="n">viz</span> <span class="o">=</span> <span class="n">IntervalVisualizer</span><span class="p">()</span>
+        <span class="n">viz</span><span class="o">.</span><span class="n">interval_plot</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Interval Plot (2 Classes)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    elif n_classes == 3:
-        print(&quot;Starting Triangle Plot...&quot;)
-        viz = TernaryVisualizer()
-        # Plot Scatter
-        ax = viz.ternary_plot(points, color=cfg.BLUE, s=50)
-        # Plot Blue Hull Area
-        viz.plot_convex_hull(points, ax=ax)
-        plt.title(&quot;Ternary Plot (3 Classes)&quot;)
-        plt.show()
+    <span class="k">elif</span> <span class="n">n_classes</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting Triangle Plot...&quot;</span><span class="p">)</span>
+        <span class="n">viz</span> <span class="o">=</span> <span class="n">TernaryVisualizer</span><span class="p">()</span>
+        <span class="c1"># Plot Scatter</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">ternary_plot</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="c1"># Plot Blue Hull Area</span>
+        <span class="n">viz</span><span class="o">.</span><span class="n">plot_convex_hull</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ternary Plot (3 Classes)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    elif n_classes &gt;= 4:
-        print(&quot;Starting Spider Plot...&quot;)
-        if labels is None:
-            labels = [f&quot;C{i + 1}&quot; for i in range(n_classes)]
+    <span class="k">elif</span> <span class="n">n_classes</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting Spider Plot...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;C</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">)]</span>
 
-        # Spider Setup
-        theta = radar_factory(n_classes, frame=&quot;polygon&quot;)
-        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={&quot;projection&quot;: &quot;radar&quot;})
+        <span class="c1"># Spider Setup</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">radar_factory</span><span class="p">(</span><span class="n">n_classes</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s2">&quot;polygon&quot;</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="s2">&quot;radar&quot;</span><span class="p">})</span>
 
-        ax.set_rgrids([0.2, 0.4, 0.6, 0.8, 1.0])
-        ax.set_ylim(0.0, 1.0)
-        ax.set_varlabels(labels)
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_rgrids</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_varlabels</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 
-        # Calculate single MLE point (Mean)
-        mean_probs = np.mean(points, axis=0)
-        idx_mle = np.argmax(mean_probs)
+        <span class="c1"># Calculate single MLE point (Mean)</span>
+        <span class="n">mean_probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">idx_mle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">mean_probs</span><span class="p">)</span>
 
-        # ONLY Plot the Red Dot (No lines, no fills, as per spider.py)
-        ax.scatter([theta[idx_mle]], [mean_probs[idx_mle]], s=80, color=cfg.RED, label=&quot;MLE&quot;)
+        <span class="c1"># ONLY Plot the Red Dot (No lines, no fills, as per spider.py)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">theta</span><span class="p">[</span><span class="n">idx_mle</span><span class="p">]],</span> <span class="p">[</span><span class="n">mean_probs</span><span class="p">[</span><span class="n">idx_mle</span><span class="p">]],</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MLE&quot;</span><span class="p">)</span>
 
-        ax.legend(loc=&quot;upper right&quot;, bbox_to_anchor=(1.3, 1.1))
-        plt.title(&quot;Credal Prediction (Spider)&quot;, pad=20)
-        plt.show()
-    else:
-        print(&quot;Error: Invalid number of classes.&quot;)
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Credal Prediction (Spider)&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Invalid number of classes.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -731,54 +671,76 @@ def dispatch_plot(input_data: np.ndarray, labels: list[str] | None = None) -&gt;
 <p>Scenario: Is the email Spam or Ham?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Data from plot_2d.py
-points_2d = np.array(
-    [
-        [0.2, 0.8],
-        [0.5, 0.5],
-        [0.1, 0.9],
-    ],
-)
-dispatch_plot(points_2d)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from plot_2d.py</span>
+<span class="n">points_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="n">dispatch_plot</span><span class="p">(</span><span class="n">points_2d</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Detected Input: 2 Classes -&gt; Starting Interval Plot...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/dg/ff01wrd9633fp_0fp2yzd1cr0000gn/T/ipykernel_15764/2730569236.py:135: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend(loc=&quot;upper left&quot;)
+</pre></div>
+</div>
+<img alt="../_images/2c5f1bc40b64388712a5ffd3597eb14e51ad59721d1f9b82eac8fd0ca5560a8a.png" src="../_images/2c5f1bc40b64388712a5ffd3597eb14e51ad59721d1f9b82eac8fd0ca5560a8a.png" />
 </div>
 </div>
 <p>Case B: Ternary Classification (3 Classes)</p>
 <p>Scenario: Sentiment Analysis (Negative, Neutral, Positive).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Data from plot_3d.py
-points = np.array(
-    [
-        [0.7, 0.2, 0.1],
-        [0.4, 0.3, 0.3],
-        [0.1, 0.8, 0.1],
-        [0.8, 0.1, 0.1],
-        [0.3, 0.1, 0.6],
-        [0.33, 0.33, 0.34],
-    ],
-)
-dispatch_plot(points)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from plot_3d.py</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="n">dispatch_plot</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Detected Input: 3 Classes -&gt; Starting Triangle Plot...
+</pre></div>
+</div>
+<img alt="../_images/9db428ef02594670e44e75d33cd7bdd114676451d03908a2bfbe3f0ee469097e.png" src="../_images/9db428ef02594670e44e75d33cd7bdd114676451d03908a2bfbe3f0ee469097e.png" />
 </div>
 </div>
 <p>Case C: Multiclass (e.g., CIFAR-10)</p>
 <p>Scenario: Image Classification with 10 classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Data from plot_multd.py
-labels = [&quot;airplane&quot;, &quot;truck&quot;, &quot;ship&quot;, &quot;horse&quot;, &quot;frog&quot;, &quot;dog&quot;, &quot;deer&quot;, &quot;cat&quot;, &quot;bird&quot;, &quot;automobile&quot;]
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from plot_multd.py</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;airplane&quot;</span><span class="p">,</span> <span class="s2">&quot;truck&quot;</span><span class="p">,</span> <span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="s2">&quot;horse&quot;</span><span class="p">,</span> <span class="s2">&quot;frog&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;deer&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;bird&quot;</span><span class="p">,</span> <span class="s2">&quot;automobile&quot;</span><span class="p">]</span>
 
-mle = np.array([0.05, 0.03, 0.02, 0.04, 0.05, 0.70, 0.03, 0.02, 0.04, 0.02])
+<span class="n">mle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>
 
-# Wrap as single sample
-input_cifar = np.array([mle])
+<span class="c1"># Wrap as single sample</span>
+<span class="n">input_cifar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mle</span><span class="p">])</span>
 
-dispatch_plot(input_cifar, labels=labels)
+<span class="n">dispatch_plot</span><span class="p">(</span><span class="n">input_cifar</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Detected Input: 10 Classes -&gt; Starting Spider Plot...
+</pre></div>
+</div>
+<img alt="../_images/0a1e06b9692df7068249827ae41ba5efd047621d6c1cbb309c73b8f63126c0dc.png" src="../_images/0a1e06b9692df7068249827ae41ba5efd047621d6c1cbb309c73b8f63126c0dc.png" />
 </div>
 </div>
 </section>
@@ -803,29 +765,36 @@ We classify customer feedback, which a model has assigned to three probability c
 <p>Since we have <strong>3 classes</strong> here, we expect the Input Handler to automatically select the <strong>Triangle Plot</strong> (Ternary Plot) for us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-# 1. Define data
-# We simulate 5 customer feedbacks with varying degrees of uncertainty
-# Shape: (5 Samples, 3 Classes)
-nps_predictions = np.array(
-    [
-        [0.80, 0.10, 0.10],  # Customer A: Highly likely dissatisfied
-        [0.05, 0.90, 0.05],  # Customer B: Highly likely neutral
-        [0.10, 0.10, 0.80],  # Customer C: Highly likely fan
-        [0.33, 0.33, 0.34],  # Customer D: Model is completely uncertain (Center)
-        [0.40, 0.40, 0.20],  # Customer E: Fluctuates between Dissatisfied and Neutral
-    ],
-)
+<span class="c1"># 1. Define data</span>
+<span class="c1"># We simulate 5 customer feedbacks with varying degrees of uncertainty</span>
+<span class="c1"># Shape: (5 Samples, 3 Classes)</span>
+<span class="n">nps_predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">],</span>  <span class="c1"># Customer A: Highly likely dissatisfied</span>
+        <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>  <span class="c1"># Customer B: Highly likely neutral</span>
+        <span class="p">[</span><span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">],</span>  <span class="c1"># Customer C: Highly likely fan</span>
+        <span class="p">[</span><span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">],</span>  <span class="c1"># Customer D: Model is completely uncertain (Center)</span>
+        <span class="p">[</span><span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span>  <span class="c1"># Customer E: Fluctuates between Dissatisfied and Neutral</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 
-# 2. Define labels
-nps_labels = [&quot;Detractor&quot;, &quot;Passive&quot;, &quot;Promoter&quot;]
+<span class="c1"># 2. Define labels</span>
+<span class="n">nps_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Detractor&quot;</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">,</span> <span class="s2">&quot;Promoter&quot;</span><span class="p">]</span>
 
-# 3. Automatically generate plot
-print(&quot;--- Tutorial Demo Start ---&quot;)
-dispatch_plot(nps_predictions, labels=nps_labels)
+<span class="c1"># 3. Automatically generate plot</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Tutorial Demo Start ---&quot;</span><span class="p">)</span>
+<span class="n">dispatch_plot</span><span class="p">(</span><span class="n">nps_predictions</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">nps_labels</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Tutorial Demo Start ---
+Detected Input: 3 Classes -&gt; Starting Triangle Plot...
+</pre></div>
+</div>
+<img alt="../_images/06c4a546a668c06cf51d646d94bd4b096658d6e5c84922440e9d7c807c54658d.png" src="../_images/06c4a546a668c06cf51d646d94bd4b096658d6e5c84922440e9d7c807c54658d.png" />
 </div>
 </div>
 <p><strong>Result Analysis:</strong>
