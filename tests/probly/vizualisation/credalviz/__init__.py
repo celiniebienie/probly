@@ -1,1 +1,1 @@
-"""Integration and unit tests for credal visualization."""
+"""Tests for the credal set visualization package."""

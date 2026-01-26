@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+import matplotlib as mpl
+
+mpl.use("Agg")
+
+from matplotlib.axes import Axes
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -12,7 +17,6 @@ def test_triangle_corners_returns_correct_shape_and_values() -> None:
     corners = viz.triangle_corners()
 
     assert corners.shape == (3, 2)
-
     assert np.allclose(corners[0], [0.0, 0.0])
     assert np.allclose(corners[1], [1.0, 0.0])
     assert np.allclose(corners[2], [0.5, np.sqrt(3) / 2])
@@ -50,7 +54,6 @@ def test_label_corners_and_vertices_adds_texts() -> None:
     viz.label_corners_and_vertices(ax, ["A", "B", "C"])
 
     assert len(ax.texts) > 0
-
     plt.close(fig)
 
 
@@ -59,14 +62,9 @@ def test_dirichlet_plot_returns_axes_and_sets_title() -> None:
     viz = TernaryVisualizer()
     alpha = np.array([2.0, 2.0, 2.0])
 
-    ax = viz.dirichlet_plot(
-        alpha=alpha,
-        labels=["A", "B", "C"],
-        title="Test Dirichlet Plot",
-    )
+    ax = viz.dirichlet_plot(alpha=alpha, labels=["A", "B", "C"], title="Test Dirichlet Plot")
 
-    assert isinstance(ax, plt.Axes)
+    assert isinstance(ax, Axes)
     assert ax.get_title() == "Test Dirichlet Plot"
     assert len(ax.collections) > 0
-
     plt.close(ax.figure)
