@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from math import gamma
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from matplotlib import tri
 import matplotlib.pyplot as plt
@@ -11,6 +11,8 @@ import numpy as np
 
 import probly.visualization.config as cfg
 
+if TYPE_CHECKING:
+    from matplotlib.axes import Axes
 
 class TernaryVisualizer:
     """Class to collect ternary Dirichlet plots."""
@@ -43,25 +45,27 @@ class TernaryVisualizer:
             """Promote 2D vector to 3D."""
             return np.array([v[0], v[1], 0.0])
 
-        area = 0.5 * np.linalg.norm(
+        area = float(0.5 * np.linalg.norm(
             np.cross(
                 to3(corners[1] - corners[0]),
                 to3(corners[2] - corners[0]),
             )
-        )
+        ))
 
         pairs = [corners[np.roll(range(3), -i)[1:]] for i in range(3)]
 
         def tri_area(point: np.ndarray, pair: np.ndarray) -> float:
-            return 0.5 * np.linalg.norm(
-                np.cross(
-                    to3(pair[0] - point),
-                    to3(pair[1] - point),
-                )
+            area = 0.5 * np.linalg.norm(
+                    np.cross(
+                        to3(pair[0] - point),
+                        to3(pair[1] - point),
+                            )
             )
+            return float(area)
 
         coords = np.array([tri_area(xy, p) for p in pairs]) / area
-        return np.clip(coords, tol, 1.0 - tol)
+        clipped_coords = np.clip(coords, tol, 1.0 - tol)
+        return clipped_coords
 
     class Dirichlet:
         """Dirichlet distribution."""
@@ -83,11 +87,11 @@ class TernaryVisualizer:
 
             return: Pdf value.
             """
-            return self.coef * np.prod([xx ** (aa - 1) for xx, aa in zip(x, self.alpha, strict=False)])
+            return float(self.coef * np.prod([xx ** (aa - 1) for xx, aa in zip(x, self.alpha, strict=False)]))
 
     def label_corners_and_vertices(
         self,
-        ax: plt.Axes,
+        ax: Axes,
         labels: list[str],
     ) -> None:
         """Label corners, vertices, and edge ticks."""
@@ -147,12 +151,12 @@ class TernaryVisualizer:
         alpha: np.ndarray,
         labels: list[str],
         title: str,
-        ax: plt.Axes = None,
-        subdiv: int = 8,
+        ax: Axes | None = None,
+        subdiv: int = 7,
         nlevels: int = 200,
         cmap: str = "viridis",
         **contour_kwargs: Any,  # noqa: ANN401
-    ) -> plt.Axes:
+    ) -> Axes:
         """Plot Dirichlet pdf contours on a ternary simplex.
 
         Args:

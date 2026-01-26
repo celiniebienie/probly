@@ -2,8 +2,14 @@
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from matplotlib import pyplot as plt
 import numpy as np
+
+if TYPE_CHECKING:
+    from matplotlib.axes import Axes
+
 
 from probly.visualization.dirichlet.plot_dirichlet import TernaryVisualizer
 
@@ -14,7 +20,7 @@ def create_dirichlet_plot(
     title: str | None = None,
     *,
     show: bool = True,
-) -> plt.Axes | None:
+) -> Axes | None:
     """Create a ternary Dirichlet distribution plot.
 
     Args:
