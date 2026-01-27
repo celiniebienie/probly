@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from matplotlib.axes import Axes
 
 
-from probly.visualization.dirichlet.plot_dirichlet import TernaryVisualizer
+from probly.visualization.dirichlet.plot_dirichlet import DirichletTernaryVisualizer
 
 
 def create_dirichlet_plot(
@@ -40,7 +40,7 @@ def create_dirichlet_plot(
     if title is None:
         title = f"Dirichlet Distribution (α = {alpha.tolist()})"  # noqa: RUF001
 
-    visualizer = TernaryVisualizer()
+    visualizer = DirichletTernaryVisualizer()
     ax = visualizer.dirichlet_plot(
         alpha=alpha,
         labels=labels,

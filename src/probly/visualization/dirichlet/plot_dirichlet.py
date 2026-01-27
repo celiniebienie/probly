@@ -14,7 +14,7 @@ import probly.visualization.config as cfg
 if TYPE_CHECKING:
     from matplotlib.axes import Axes
 
-class TernaryVisualizer:
+class DirichletTernaryVisualizer:
     """Class to collect ternary Dirichlet plots."""
 
     def __init__(self) -> None:
