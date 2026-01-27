@@ -14,6 +14,7 @@ import probly.visualization.config as cfg
 if TYPE_CHECKING:
     from matplotlib.axes import Axes
 
+
 class DirichletTernaryVisualizer:
     """Class to collect ternary Dirichlet plots."""
 
@@ -45,21 +46,24 @@ class DirichletTernaryVisualizer:
             """Promote 2D vector to 3D."""
             return np.array([v[0], v[1], 0.0])
 
-        area = float(0.5 * np.linalg.norm(
-            np.cross(
-                to3(corners[1] - corners[0]),
-                to3(corners[2] - corners[0]),
+        area = float(
+            0.5
+            * np.linalg.norm(
+                np.cross(
+                    to3(corners[1] - corners[0]),
+                    to3(corners[2] - corners[0]),
+                )
             )
-        ))
+        )
 
         pairs = [corners[np.roll(range(3), -i)[1:]] for i in range(3)]
 
         def tri_area(point: np.ndarray, pair: np.ndarray) -> float:
             area = 0.5 * np.linalg.norm(
-                    np.cross(
-                        to3(pair[0] - point),
-                        to3(pair[1] - point),
-                            )
+                np.cross(
+                    to3(pair[0] - point),
+                    to3(pair[1] - point),
+                )
             )
             return float(area)
 
