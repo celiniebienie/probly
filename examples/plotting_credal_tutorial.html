@@ -311,16 +311,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="c1"># Importing the visualization tool</span>
-<span class="c1"># Note: Ensure the &#39;probly&#39; package is installed or the file structure is correct.</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">probly.visualization.credalviz.credal_visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_credal_plot</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">probly.visualization.credal.credal_visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_credal_plot</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="c1"># Fallback if running locally with flat files (may require adjusting internal imports in the files)</span>
-    <span class="c1"># For this tutorial, we assume the package structure is valid.</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">credal_visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_credal_plot</span>
 
-<span class="c1"># Optional: Set random seed</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -333,7 +328,7 @@
 <p>In binary classification, a Credal Set defines a range of probabilities for the positive class (e.g., $P(\text{Class 1}) \in [0.2, 0.5]$). The interval plot visualizes this range.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 1. Generate Data ---</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Data</span>
 <span class="c1"># We simulate a Credal Set defined by 3 vertex distributions for a binary problem.</span>
 <span class="c1"># Each row is a valid probability vector [P(C0), P(C1)]</span>
 <span class="n">points_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
@@ -347,7 +342,7 @@
 <span class="c1"># Define labels</span>
 <span class="n">labels_2d</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Class A&quot;</span><span class="p">,</span> <span class="s2">&quot;Class B&quot;</span><span class="p">]</span>
 
-<span class="c1"># --- 2. Plot ---</span>
+<span class="c1"># Create Plot</span>
 <span class="c1"># The function automatically detects 2 classes and draws an Interval Plot.</span>
 <span class="n">create_credal_plot</span><span class="p">(</span>
     <span class="n">input_data</span><span class="o">=</span><span class="n">points_2d</span><span class="p">,</span>
@@ -379,7 +374,7 @@
 <p>For 3 classes, the probabilities sum to 1, forming a 2D triangle (Simplex). A Credal Set is a polygon (convex hull) inside this triangle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 1. Generate Data ---</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Data</span>
 <span class="c1"># Simulate a Credal Set for 3 classes (e.g., Detractor, Passive, Promoter)</span>
 <span class="c1"># These points define the corners of the uncertainty region.</span>
 <span class="n">points_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
@@ -392,13 +387,13 @@
 
 <span class="n">labels_3d</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Detractor&quot;</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">,</span> <span class="s2">&quot;Promoter&quot;</span><span class="p">]</span>
 
-<span class="c1"># --- 2. Plot ---</span>
+<span class="c1"># Create Plot</span>
 <span class="c1"># Automatically detects 3 classes and draws a Ternary Plot.</span>
 <span class="n">create_credal_plot</span><span class="p">(</span>
     <span class="n">input_data</span><span class="o">=</span><span class="n">points_3d</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="n">labels_3d</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Ternary Credal Set (Simplex)&quot;</span><span class="p">,</span>
-    <span class="n">choice</span><span class="o">=</span><span class="s2">&quot;Credal&quot;</span><span class="p">,</span>  <span class="c1"># Highlights the convex hull (green area)</span>
+    <span class="n">choice</span><span class="o">=</span><span class="s2">&quot;Credal&quot;</span><span class="p">,</span>  <span class="c1"># Highlights the convex hull</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -413,7 +408,7 @@
 <section id="id1">
 <h3>Interpretation<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><strong>Green Area:</strong> The convex hull representing the Credal Set. A larger area implies higher epistemic uncertainty.</p></li>
+<li><p><strong>Blue Area:</strong> The convex hull representing the Credal Set. A larger area implies higher epistemic uncertainty.</p></li>
 <li><p><strong>Corners:</strong> Represent certainty (100% probability for one class).</p></li>
 </ul>
 </section>
@@ -424,7 +419,7 @@
 <p>For high-dimensional data (e.g., CIFAR-10 with 10 classes), we cannot use a simplex. Instead, we use a Spider Plot to show the <strong>Min/Max probability bounds</strong> for each class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 1. Generate Data ---</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Data</span>
 <span class="c1"># Simulate a scenario with 10 classes (e.g., CIFAR-10)</span>
 <span class="c1"># We generate 5 &quot;sample&quot; probability vectors that form the Credal Set.</span>
 <span class="n">n_classes</span> <span class="o">=</span> <span class="mi">10</span>
@@ -434,7 +429,7 @@
 <span class="c1"># Custom labels</span>
 <span class="n">labels_multi</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;airplane&quot;</span><span class="p">,</span> <span class="s2">&quot;automobile&quot;</span><span class="p">,</span> <span class="s2">&quot;bird&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;deer&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;frog&quot;</span><span class="p">,</span> <span class="s2">&quot;horse&quot;</span><span class="p">,</span> <span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="s2">&quot;truck&quot;</span><span class="p">]</span>
 
-<span class="c1"># --- 2. Plot ---</span>
+<span class="c1"># Create Plot</span>
 <span class="c1"># Automatically detects &gt;3 classes and draws a Spider Plot.</span>
 <span class="n">create_credal_plot</span><span class="p">(</span>
     <span class="n">input_data</span><span class="o">=</span><span class="n">points_multi</span><span class="p">,</span>
@@ -461,8 +456,26 @@
 </ul>
 </section>
 </section>
+<section id="customizing-your-plots">
+<h2>5. Customizing your plots<a class="headerlink" href="#customizing-your-plots" title="Link to this heading">¶</a></h2>
+<p>The credal visulization is created in a way so you can choose between different styles.
+By changing the flags with <code class="docutils literal notranslate"><span class="pre">create_credal_plot()</span></code>, you can influence the result.<br></p>
+<p><code class="docutils literal notranslate"><span class="pre">choice</span></code>: <br></p>
+<ul class="simple">
+<li><p>if left empty, automatically shows both MLE and Credal Hull.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">choice</span> <span class="pre">=</span> <span class="pre">&quot;MLE&quot;</span></code>: Only shows MLE and Probabilities.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">choice</span> <span class="pre">=</span> <span class="pre">&quot;Credal&quot;</span></code>: Only shows Credal Hull and Probabilities.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">choice</span> <span class="pre">=</span> <span class="pre">&quot;Probabilities&quot;</span></code>: Shows neither MLE nor Credal Hull. Only Probabilities.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">minmax</span></code>: <br></p>
+<ul class="simple">
+<li><p>Only works for <code class="docutils literal notranslate"><span class="pre">plot_3d.py</span></code> and if credal band is visible.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minmax</span> <span class="pre">=</span> <span class="pre">False</span></code>: Does not show minmax.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minmax</span> <span class="pre">=</span> <span class="pre">True</span></code>: Shows minmax.</p></li>
+</ul>
+</section>
 <section id="conclusion">
-<h2>5. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<h2>6. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">create_credal_plot</span></code> function provides a unified interface to visualize uncertainty across different dimensions:</p>
 <ul class="simple">
 <li><p><strong>Intervals</strong> for precise binary bounds.</p></li>
@@ -524,7 +537,8 @@
 <li><a class="reference internal" href="#id2">Interpretation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#conclusion">5. Conclusion</a></li>
+<li><a class="reference internal" href="#customizing-your-plots">5. Customizing your plots</a></li>
+<li><a class="reference internal" href="#conclusion">6. Conclusion</a></li>
 </ul>
 </li>
 </ul>
