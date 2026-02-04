@@ -362,6 +362,7 @@ You can find them under the section further reading.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../../../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" src="../../../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imports successfully loaded.
 </pre></div>
 </div>
@@ -374,8 +375,8 @@ You can find them under the section further reading.</p>
 It takes an array of probability vectors (each summing to 1) and visualizes them as a credal set:</p>
 <ul class="simple">
 <li><p><strong>2 classes:</strong> interval band on a line</p></li>
-<li><p><strong>3 classes:</strong> ternary simpplotlex with convex hull</p></li>
-<li><p><strong>more than 3</strong> classes: radar/spider plot with min–max envelope
+<li><p><strong>3 classes:</strong> ternary plot with convex hull</p></li>
+<li><p><strong>more than 3 classes:</strong> radar/spider plot with min–max envelope <br>
 The public entry point is <code class="docutils literal notranslate"><span class="pre">create_credal_plot()</span></code>, which delegates to <code class="docutils literal notranslate"><span class="pre">dispatch_plot()</span></code> based on the number of classes.</p></li>
 </ul>
 <section id="public-api-credal-visualization-py">
@@ -390,7 +391,7 @@ The public entry point is <code class="docutils literal notranslate"><span class
 <p>It selects and executes the correct plotting function based on class count.
 By calling <code class="docutils literal notranslate"><span class="pre">create_credal_plot()</span></code> from <code class="docutils literal notranslate"><span class="pre">credal_visualization.py</span></code> your</p>
 <p>Validates input_data is a non-empty NumPy array, at least 2D, with non-negative probabilities that sum to 1 per row, and ≥2 classes with <code class="docutils literal notranslate"><span class="pre">check_shape()</span></code>.
-It then normalizes shapes by flattening higher-dimensional inputsso plotting always sees a 2D matrix of samples with <code class="docutils literal notranslate"><span class="pre">normalize_input()</span></code>.<br></p>
+It then normalizes shapes by flattening higher-dimensional input sso plotting always sees a 2D matrix of samples with <code class="docutils literal notranslate"><span class="pre">normalize_input()</span></code>.<br></p>
 <p><strong>Important to mention:</strong><br></p>
 <ul class="simple">
 <li><p>Your probabilities <strong>must sum to 1</strong>(otherwise you’ll get a clear error).</p></li>
@@ -628,7 +629,7 @@ In this plot, the absolute margin values are inverted and normalized so that:<br
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/e20162c68056a95c89a486514a161aaec2ad2631ffcb0d9a9aaa9c9f890412c7.png" src="../../../_images/e20162c68056a95c89a486514a161aaec2ad2631ffcb0d9a9aaa9c9f890412c7.png" />
+<img alt="../../../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" src="../../../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Quick demo (kernel: rbf, C: 0.5)&#39;}, xlabel=&#39;Feature 1&#39;, ylabel=&#39;Feature 2&#39;&gt;
 </pre></div>
 </div>
