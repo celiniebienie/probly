@@ -253,6 +253,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_bnn_classification.html">Bayesian Neural Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_evidential_classification.html">Evidential Model for Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_evidential_regression.html">Evidential Regression Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/transformations_comparison.html">Transformation Comparison: Dropout vs DropConnect vs Ensemble vs Bayesian vs Evidential (PyTorch)</a></li>
 </ul>
 </li>
 </ul>
@@ -314,17 +315,11 @@ NOTE: Please load imports and demo first so that the notebook works properly.</p
 <p>At first, we need to import several packages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">probly.visualization.clustermargin.clustervisualizer</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_uncertainty</span>
+from probly.visualization.clustermargin.clustervisualizer import plot_uncertainty
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imports successfully loaded.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" src="../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imports successfully loaded.
+print(&quot;Imports successfully loaded.&quot;)
 </pre></div>
 </div>
 </div>
@@ -337,29 +332,23 @@ The cluster centers are controlled via <code class="docutils literal notranslate
 <p>We then call <code class="docutils literal notranslate"><span class="pre">plot_uncertainty()</span></code> to visualize the samples and a heatmap derived from an SVM decision boundary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>value = 42
+rng = np.random.default_rng(value)
 
-<span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">120</span>
-<span class="n">cluster1</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">cluster2</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+n1, n2 = 120, 120
+cluster1 = rng.normal(loc=(0.0, 0.0), scale=0.7, size=(n1, 2))
+cluster2 = rng.normal(loc=(2.0, 1.5), scale=0.7, size=(n2, 2))
 
-<span class="n">plot_uncertainty</span><span class="p">(</span>
-    <span class="n">cluster1</span><span class="p">,</span>
-    <span class="n">cluster2</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Quick demo&quot;</span><span class="p">,</span>
-    <span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span>
-    <span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">gamma</span><span class="o">=</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span>
-    <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Demo loaded with seed </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" src="../_images/955f5dffb6d3bd0cfab6efdba95a60468283ceba6112274685b69c6bb81ecf6e.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Demo loaded with seed 42.
+plot_uncertainty(
+    cluster1,
+    cluster2,
+    title=&quot;Quick demo&quot;,
+    kernel=&quot;rbf&quot;,
+    C=0.5,
+    gamma=&quot;scale&quot;,
+    show=True,
+)
+print(f&quot;Demo loaded with seed {value}.&quot;)
 </pre></div>
 </div>
 </div>
@@ -439,23 +428,18 @@ Sensitive to scaling and <code class="docutils literal notranslate"><span class=
 In the plot: can look similar to linear in some settings, or behave oddly if parameters are not well tuned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">kernel</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="s2">&quot;rbf&quot;</span><span class="p">,</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">]:</span>
-    <span class="n">plot_uncertainty</span><span class="p">(</span>
-        <span class="n">cluster1</span><span class="p">,</span>
-        <span class="n">cluster2</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Kernel comparison&quot;</span><span class="p">,</span>
-        <span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span>
-        <span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">gamma</span><span class="o">=</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span>
-        <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for kernel in [&quot;linear&quot;, &quot;rbf&quot;, &quot;sigmoid&quot;]:
+    plot_uncertainty(
+        cluster1,
+        cluster2,
+        title=&quot;Kernel comparison&quot;,
+        kernel=kernel,
+        C=0.5,
+        gamma=&quot;scale&quot;,
+        show=True,
+    )
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/904c496034bc8dda99473470c8c73a52a2e2bdf5691ac8eddd9a70a47fdfff00.png" src="../_images/904c496034bc8dda99473470c8c73a52a2e2bdf5691ac8eddd9a70a47fdfff00.png" />
-<img alt="../_images/07795187f138ae838e993c41818e3213fd946f95cbd8337d1083ce17f54ebfb9.png" src="../_images/07795187f138ae838e993c41818e3213fd946f95cbd8337d1083ce17f54ebfb9.png" />
-<img alt="../_images/da3e3fc5abeac8bc92a3a4c5a2b8679aa1009b25525add5a53a727b4915cba47.png" src="../_images/da3e3fc5abeac8bc92a3a4c5a2b8679aa1009b25525add5a53a727b4915cba47.png" />
 </div>
 </div>
 </section>
@@ -471,23 +455,18 @@ Result: smoother boundary, more tolerance for noise/outliers, often better gener
 <p>In the clustermargin plot, changing <code class="docutils literal notranslate"><span class="pre">C</span></code> often changes how “tight” the transition region between the two clusters looks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]:</span>
-    <span class="n">plot_uncertainty</span><span class="p">(</span>
-        <span class="n">cluster1</span><span class="p">,</span>
-        <span class="n">cluster2</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Effect of C&quot;</span><span class="p">,</span>
-        <span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span>
-        <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">,</span>
-        <span class="n">gamma</span><span class="o">=</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span>
-        <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for C in [0.1, 0.5, 2.0]:
+    plot_uncertainty(
+        cluster1,
+        cluster2,
+        title=&quot;Effect of C&quot;,
+        kernel=&quot;rbf&quot;,
+        C=C,
+        gamma=&quot;scale&quot;,
+        show=True,
+    )
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/033e8804e80fe4a28135b943f53bf687d3b93244f1d9d27372cc1ecb1299f135.png" src="../_images/033e8804e80fe4a28135b943f53bf687d3b93244f1d9d27372cc1ecb1299f135.png" />
-<img alt="../_images/5644f7d1db71869f2a9c1aafffe35a77599a6a260760602360dc9263dcb5fde1.png" src="../_images/5644f7d1db71869f2a9c1aafffe35a77599a6a260760602360dc9263dcb5fde1.png" />
-<img alt="../_images/279361ccb6ec8e636ae5e37a0713eec83a6918afb86ace5b2f0d3f8b5548071e.png" src="../_images/279361ccb6ec8e636ae5e37a0713eec83a6918afb86ace5b2f0d3f8b5548071e.png" />
 </div>
 </div>
 </section>
@@ -506,24 +485,18 @@ Result: the boundary becomes smoother and more global, potentially underfitting.
 <p>In <code class="docutils literal notranslate"><span class="pre">clustermargin</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma</span></code> strongly affects how “narrow” or “wide” the uncertainty band is around the boundary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">gamma</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]:</span>
-    <span class="n">plot_uncertainty</span><span class="p">(</span>
-        <span class="n">cluster1</span><span class="p">,</span>
-        <span class="n">cluster2</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Effect of gamma = </span><span class="si">{</span><span class="n">gamma</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span>
-        <span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">,</span>
-        <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for gamma in [&quot;scale&quot;, 0.2, 1.0, 5.0]:
+    plot_uncertainty(
+        cluster1,
+        cluster2,
+        title=f&quot;Effect of gamma = {gamma}&quot;,
+        kernel=&quot;rbf&quot;,
+        C=0.5,
+        gamma=gamma,
+        show=True,
+    )
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/942fe35a150d67c0b3f1e88f0599d03e02e44efa8cdc73b5b86b3709fcd50e77.png" src="../_images/942fe35a150d67c0b3f1e88f0599d03e02e44efa8cdc73b5b86b3709fcd50e77.png" />
-<img alt="../_images/ae31cfcf11309ad5d3f8c451eced014b0d0516ce7817309c09e78cdb144aa437.png" src="../_images/ae31cfcf11309ad5d3f8c451eced014b0d0516ce7817309c09e78cdb144aa437.png" />
-<img alt="../_images/633f1cb8d4f18f774f2ce000f4840252a61d580c836cd0ad78e990b8638363c6.png" src="../_images/633f1cb8d4f18f774f2ce000f4840252a61d580c836cd0ad78e990b8638363c6.png" />
-<img alt="../_images/9efa4dc0c4735491663da470420a04a194577b6d06fe6febb53277733891f4ac.png" src="../_images/9efa4dc0c4735491663da470420a04a194577b6d06fe6febb53277733891f4ac.png" />
 </div>
 </div>
 </section>

@@ -253,6 +253,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_bnn_classification.html">Bayesian Neural Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_evidential_classification.html">Evidential Model for Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/train_evidential_regression.html">Evidential Regression Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/examples/transformations_comparison.html">Transformation Comparison: Dropout vs DropConnect vs Ensemble vs Bayesian vs Evidential (PyTorch)</a></li>
 </ul>
 </li>
 </ul>
@@ -309,16 +310,11 @@ a natural and intuitive way to understand Dirichlet behavior.</p>
 <p>First of all we import the necessary packages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">probly.visualization.dirichlet.dirichlet_visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_dirichlet_plot</span>
+from probly.visualization.dirichlet.dirichlet_visualization import create_dirichlet_plot
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imports successfully loaded.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imports successfully loaded.
+print(&quot;Imports successfully loaded.&quot;)
 </pre></div>
 </div>
 </div>
@@ -329,17 +325,11 @@ a natural and intuitive way to understand Dirichlet behavior.</p>
 <p>Let’s generate a Dirichlet plot with the <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">values</span> <span class="pre">(8,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>. Where the values corespond to the likelyhood of an outcome.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="s2">&quot;Blue&quot;</span><span class="p">)</span>
-<span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Distribution of likelyhood if balls in a Urn are: </span><span class="si">{</span><span class="n">labels</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alpha_values = np.array([8, 2, 2])
+labels = (&quot;Red&quot;, &quot;Green&quot;, &quot;Blue&quot;)
+title = f&quot;Distribution of likelyhood if balls in a Urn are: {labels}&quot;
 
-<span class="n">create_dirichlet_plot</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha_values</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/80000a7ebdbfebcf62b3b08a12ec062d40d8efa1610ad251a4ca55282de5865a.png" src="../_images/80000a7ebdbfebcf62b3b08a12ec062d40d8efa1610ad251a4ca55282de5865a.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &quot;Distribution of likelyhood if balls in a Urn are: (&#39;Red&#39;, &#39;Green&#39;, &#39;Blue&#39;)&quot;}&gt;
+create_dirichlet_plot(alpha=alpha_values, labels=labels, title=title)
 </pre></div>
 </div>
 </div>
@@ -708,15 +698,9 @@ We generate a visually interpretable Dirichlet plot.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bigAlphaValues</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="c1"># noqa: N816</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bigAlphaValues = np.array([20, 80, 20])  # noqa: N816
 
-<span class="n">create_dirichlet_plot</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">bigAlphaValues</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ac34667a14f989ee03fa856efe38c931c0cfc4dcb4bbd3d94057b0a14e143127.png" src="../_images/ac34667a14f989ee03fa856efe38c931c0cfc4dcb4bbd3d94057b0a14e143127.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Dirichlet Distribution (α = [20, 80, 20])&#39;}&gt;
+create_dirichlet_plot(alpha=bigAlphaValues)
 </pre></div>
 </div>
 </div>
@@ -724,15 +708,9 @@ We generate a visually interpretable Dirichlet plot.</p>
 <p><strong>Bigger alpha values</strong> lead to a concentrated distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_alpha_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>small_alpha_values = np.array([3, 8, 2])
 
-<span class="n">create_dirichlet_plot</span><span class="p">(</span><span class="n">small_alpha_values</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/2e1bd8820045d658262f50ef26d726cdcb8f22eebb2a8f5327340fcc2e42b898.png" src="../_images/2e1bd8820045d658262f50ef26d726cdcb8f22eebb2a8f5327340fcc2e42b898.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Dirichlet Distribution (α = [3, 8, 2])&#39;}&gt;
+create_dirichlet_plot(small_alpha_values)
 </pre></div>
 </div>
 </div>
