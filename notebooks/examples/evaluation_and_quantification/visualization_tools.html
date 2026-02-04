@@ -232,6 +232,9 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Evaluation and Quantification</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Evaluation and Quantification</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plotting_credal_tutorial.html">Credal Sets Visualization Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clustermargin_tutorial.html">A tutorial for clustervisualiser.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dirichlet_tutorial.html">Dirichlet distribution tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calibration_metrics.html">Calibration Metrics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interpretation_techniques.html">Interpretation techniques</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Visualisation Tools</a></li>
@@ -691,12 +694,12 @@ In this plot, the absolute margin values are inverted and normalized so that:<br
 <p>These modules implement the <strong>Coverage efficiency</strong> visualization to evaluate how <em>trustworthy</em> a classifier is when using <strong>prediction sets</strong> instead of single-label predictions.<br>
 The plot tracks two critical metrics:</p>
 <ul class="simple">
-<li><p><strong>Coverage (blue, reliability):</strong><br />
-The fraction of samples where the <strong>true class is included</strong> in the predicted set.<br />
-Ideally, empirical coverage follows the <strong>diagonal “Ideal Coverage”</strong> line (coverage ≈ target confidence).<br />
+<li><p><strong>Coverage (blue, reliability):</strong>
+The fraction of samples where the <strong>true class is included</strong> in the predicted set.
+Ideally, empirical coverage follows the <strong>diagonal “Ideal Coverage”</strong> line (coverage ≈ target confidence).
 If coverage falls <strong>below</strong> the diagonal, the model is <strong>overconfident</strong> (it promises more safety than it delivers).</p></li>
-<li><p><strong>Efficiency (red, precision):</strong><br />
-Measures how <strong>small</strong> the prediction set is on average (normalized).<br />
+<li><p><strong>Efficiency (red, precision):</strong>
+Measures how <strong>small</strong> the prediction set is on average (normalized).
 Here, efficiency is plotted as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">normalized_set_size</span></code>:</p>
 <ul>
 <li><p><strong>1.0</strong> ≈ very small sets (often size 1; very precise)</p></li>
@@ -706,7 +709,7 @@ Here, efficiency is plotted as <code class="docutils literal notranslate"><span 
 </ul>
 <p>A dangerous failure mode is: <strong>coverage drops while efficiency stays high</strong>: the model is making <strong>confident but wrong</strong> predictions.</p>
 <p><strong>Interpretation:</strong>
-The visualization is based on <strong>prediction sets</strong> (similar in spirit to conformal prediction):<br />
+The visualization is based on <strong>prediction sets</strong> (similar in spirit to conformal prediction):
 for a target confidence level <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">α)</span></code> the model outputs the <strong>smallest set of top-k classes</strong> whose cumulative probability mass reaches that confidence.</p>
 <ul class="simple">
 <li><p><strong>x-axis:</strong> Target confidence level <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">α)</span></code> (the safety level requested by the user)</p></li>
@@ -718,15 +721,15 @@ for a target confidence level <code class="docutils literal notranslate"><span c
 <li><p><strong>ID (in-distribution):</strong> data similar to the training distribution</p></li>
 <li><p><strong>OOD (out-of-distribution):</strong> data that differs from training (domain shift, novel patterns, etc.)</p></li>
 </ul>
-<p>In an ideal OOD scenario, <strong>efficiency should decrease</strong> (sets expand) because the model correctly expresses uncertainty.<br />
+<p>In an ideal OOD scenario, <strong>efficiency should decrease</strong> (sets expand) because the model correctly expresses uncertainty.
 If efficiency stays high on OOD while coverage drops, the model is <strong>overconfident under shift</strong>.</p>
 <p><strong>How to access the module:</strong><br>
 <code class="docutils literal notranslate"><span class="pre">coverage_efficiency_ood.py</span></code> provides two main entry points:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">plot_coverage_efficiency_id_ood(probs_id,</span> <span class="pre">targets_id,</span> <span class="pre">probs_ood,</span> <span class="pre">targets_ood,</span> <span class="pre">...)</span></code><br />
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_coverage_efficiency_id_ood(probs_id,</span> <span class="pre">targets_id,</span> <span class="pre">probs_ood,</span> <span class="pre">targets_ood,</span> <span class="pre">...)</span></code>
 Use this if your data is <strong>already split</strong> into ID and OOD parts.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plot_coverage_efficiency_from_ood_labels(probs,</span> <span class="pre">targets,</span> <span class="pre">ood_labels,</span> <span class="pre">...)</span></code><br />
-Use this if you have a <strong>combined dataset</strong> with binary markers (default convention: <code class="docutils literal notranslate"><span class="pre">0=ID</span></code>, <code class="docutils literal notranslate"><span class="pre">1=OOD</span></code>).<br />
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_coverage_efficiency_from_ood_labels(probs,</span> <span class="pre">targets,</span> <span class="pre">ood_labels,</span> <span class="pre">...)</span></code>
+Use this if you have a <strong>combined dataset</strong> with binary markers (default convention: <code class="docutils literal notranslate"><span class="pre">0=ID</span></code>, <code class="docutils literal notranslate"><span class="pre">1=OOD</span></code>).
 The function automatically splits the arrays and calls the ID/OOD plotting routine.</p></li>
 </ul>
 <p><strong>Inputs and configuration:</strong></p>
@@ -803,10 +806,10 @@ The function automatically splits the arrays and calls the ID/OOD plotting routi
 <section id="further-reading">
 <h3>5. Further reading:<a class="headerlink" href="#further-reading" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><strong>Credal:</strong> <a class="reference internal" href="#notebooks/examples/plotting_credal_tutorial.ipynb"><span class="xref myst">notebooks/examples/plotting_credal_tutorial.ipynb</span></a></p></li>
-<li><p><strong>Clustermargin:</strong> <a class="reference internal" href="#notebooks/examples/clustermargin_tutorial.ipynb"><span class="xref myst">notebooks/examples/clustermargin_tutorial.ipynb</span></a></p></li>
-<li><p><strong>Dirichlet:</strong> <a class="reference internal" href="#notebooks/examples/dirichlet_tutorial.ipynb"><span class="xref myst">notebooks/examples/dirichlet_tutorial.ipynb</span></a></p></li>
-<li><p><strong>Coverage–Efficiency:</strong> <a class="reference internal" href="#notebooks/examples/coverage_efficiency_tutorial.ipynb"><span class="xref myst">notebooks/examples/coverage_efficiency_tutorial.ipynb</span></a></p></li>
+<li><p><strong>Credal:</strong> <span class="xref std std-doc">Credal Tutorial</span></p></li>
+<li><p><strong>Clustermargin:</strong> <span class="xref std std-doc">Clustermargin Tutorial</span></p></li>
+<li><p><strong>Dirichlet:</strong> <span class="xref std std-doc">Dirichlet Tutorial</span></p></li>
+<li><p><strong>Coverage–Efficiency:</strong> <span class="xref std std-doc">Coverage-Efficiency Tutorial</span></p></li>
 </ul>
 </section>
 </section>
